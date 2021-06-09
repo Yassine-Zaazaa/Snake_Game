@@ -20,7 +20,10 @@ var snake;
     if(snake.eat(fruit)) {
       fruit.pickLocation();
     }
-  }, 250);
+    if(snake.die()) {
+      alert("You lost!");
+    }
+  }, 100);
 }());
 
 window.addEventListener('keydown', ((evt) => {

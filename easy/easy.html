@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Snake Game</title>
     <style>
       body {
         text-align: center;
@@ -12,16 +12,17 @@
         width: 50%;
         padding: 10px;
       }
-      .canvas {
+      #gameCanvas {
         display: block;
         margin: 5px auto;
-        border: 10px solid grey;
+        border: 10px solid #b6b9bd;
       }
       .button:hover {
         background-color: grey;
         cursor: pointer;
         text-align: center;
       }
+  
     </style>
   </head>
   <body>
@@ -38,7 +39,7 @@
         SNAKE GAME
       </h1>
       <br />
-      <canvas class="canvas" width="600" height="450"></canvas>
+      <canvas id="gameCanvas" width="600" height="600"></canvas>
       <p style="font-weight: bold;">
         &emsp;&emsp;1x&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2x
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;3x
@@ -87,4 +88,6 @@
     </div>
   </body>
 </html>
-<script src="snake_game.js"></script>
+<script type="text/javascript" src="fruit.js"></script>
+<script type="text/javascript" src="snake.js"></script>
+<script type="text/javascript" src="draw.js"></script>
