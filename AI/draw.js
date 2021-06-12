@@ -23,7 +23,7 @@ var snake;
     if(snake.die()) {
       alert("You lost!");
     }
-  }, 100);
+  }, 10);
 }());
 
 window.addEventListener('keydown', ((evt) => {

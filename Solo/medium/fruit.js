@@ -8,11 +8,7 @@ function Fruit() {
     }
 
     this.draw = function() {
-        ctx.beginPath();
-    ctx.lineWidth = "2"
-    ctx.strokeStyle = "black";
-    ctx.fillStyle = "yellow"
-    ctx.strokeRect(this.x, this.y, scale, scale);
-    ctx.fillRect(this.x, this.y, scale, scale);
+        ctx.fillStyle = "yellow"
+        ctx.fillRect(this.x, this.y, scale, scale);
+        }
     }
-}

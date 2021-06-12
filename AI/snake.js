@@ -7,15 +7,10 @@ function Snake() {
     this.tail = [];
   
     this.draw = function () {
-      ctx.beginPath();
-    ctx.lineWidth = "2"
-    ctx.strokeStyle = "black";
     ctx.fillStyle = "blue"
     for ( let i =0; i<this.tail.length; i++) {
-      ctx.strokeRect(this.tail[i].x, this.tail[i].y, scale, scale);
       ctx.fillRect(this.tail[i].x, this.tail[i].y, scale, scale)
     }
-    ctx.strokeRect(this.x, this.y, scale, scale);
     ctx.fillRect(this.x, this.y, scale, scale);
     };
   
@@ -40,6 +35,41 @@ function Snake() {
       }
       if(this.y < 0) {
         this.y = canvas .height;
+      }
+      var a = 0;
+      var b = 0;
+      if(snake.x == 570 && snake.y == 0) {
+        snake.changeDirection("Down")
+      }
+      if(snake.x == canvas.width && snake.y == canvas.height){
+        snake.changeDirection("Left")
+      }
+      var values_x = [0, 0.05, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95, 1]
+      for(let i = 0; i < values_x.length; i++) {
+        if((snake.x + scale) / canvas.width == values_x[i] && snake.y == canvas.height) {
+           a = 1;
+        }
+      }
+      if(a = 1 && snake.y == canvas.height) {
+        snake.changeDirection("Up")
+      }
+      if(a = 1 && snake.y == scale && snake.x != 0) {
+        snake.changeDirection("Left")
+      }
+      var values_x_2 = [0.1, 0.2, 0.3, 0.4, 0.5,0.6, 0.7, 0.8, 0.9, 1]
+      for(let i = 0; i < values_x_2.length; i++) {
+        if((snake.x + scale) / canvas.width == values_x_2[i]) {
+          b = 1
+        }
+      }
+      if(snake.y == scale && b==1) {
+        snake.changeDirection("Down")
+      }
+      if(snake.y == canvas.height && b == 1) {
+        snake.changeDirection("Left")
+      }
+      if(snake.x == 0 && snake.y == 0) {
+        snake.changeDirection("Right")
       }
     };
   
@@ -77,7 +107,7 @@ function Snake() {
         if(this.x === this.tail[i]["x"] && this.y === this.tail[i]["y"]) {
           console.log(this.tail);
           if(confirm("You lost. Press ok to restart")) {
-            window.location = "hard.html"
+            window.location = "AI.html"
           }
           return 
         }

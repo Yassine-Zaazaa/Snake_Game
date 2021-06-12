@@ -7,15 +7,10 @@ function Snake() {
     this.tail = [];
   
     this.draw = function () {
-      ctx.beginPath();
-    ctx.lineWidth = "2"
-    ctx.strokeStyle = "black";
     ctx.fillStyle = "blue"
     for ( let i =0; i<this.tail.length; i++) {
-      ctx.strokeRect(this.tail[i].x, this.tail[i].y, scale, scale);
       ctx.fillRect(this.tail[i].x, this.tail[i].y, scale, scale)
     }
-    ctx.strokeRect(this.x, this.y, scale, scale);
     ctx.fillRect(this.x, this.y, scale, scale);
     };
   
@@ -41,7 +36,7 @@ function Snake() {
       if(this.y < 0) {
         this.y = canvas .height;
       }
-    };
+  };
   
     this.changeDirection = function(direction) {
       switch(direction) {
